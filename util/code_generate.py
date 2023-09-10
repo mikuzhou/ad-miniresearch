@@ -21,6 +21,7 @@ def pythonCodeGenerator(problem_description):
         model="gpt-3.5-turbo-16k",
         temperature=0,
         openai_api_key = ""
+        # put your api here
     )
     system_template = """You are an AI assistant tasked with generating a solution code in Python based on the given problem description."""
     system_message_prompt = SystemMessagePromptTemplate.from_template(system_template)
