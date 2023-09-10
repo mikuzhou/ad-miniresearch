@@ -22,7 +22,7 @@ def extract_race_reports(tsan_output):
 def score_python_code(tsan_output):
     race_reports = extract_race_reports(tsan_output)
     if not race_reports:
-        return "No data races detected. Code is thread-safe."
+        return 10.0
 
     # 根据竞争数量和严重性进行评分
     num_races = len(race_reports)
@@ -34,7 +34,7 @@ def score_python_code(tsan_output):
             if severity in report:
                 total_score += score
 
-    return f"Detected {num_races} data race(s). Code scored {total_score} out of 10."
+    return total_score
 
 # 示例TSan输出
 tsan_output = """

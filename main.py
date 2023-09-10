@@ -1,5 +1,7 @@
 import os
 import subprocess
+import time
+
 
 def execute_python_files_in_folder(folder_path):
     # 遍历指定文件夹内的所有文件
@@ -12,8 +14,10 @@ def execute_python_files_in_folder(folder_path):
                 # 使用subprocess运行Python文件
                 try:
                     subprocess.run(["python", file_path], check=True)
+                    time.sleep(10)
                 except subprocess.CalledProcessError as e:
                     print(f"Error executing {file_path}: {e}")
+                    time.sleep(10)
 
 # 指定要执行的文件夹路径
 folder_to_execute = "./100problems"

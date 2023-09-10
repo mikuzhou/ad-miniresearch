@@ -20,4 +20,4 @@ def extract_pylint_score(pylint_output):
     if match:
         score = float(match.group(1))
         return score
-    return None
+    return 0.0
