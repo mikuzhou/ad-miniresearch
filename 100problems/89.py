@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 85: Concurrent Data Analysis
 #
-# Description: Build a program to concurrently analyze data from multiple sources, such as logs, sensor readings, or user interactions.
-#
-# Requirements:
-#
-# Implement a data analysis system that allows data from multiple sources to be analyzed concurrently with various analysis tasks.
-# Ensure that data analysis tasks are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of data sources and analysis tasks (e.g., log analysis, anomaly detection).
-# Execute analysis functions concurrently.
-# Verify that analysis results are saved correctly.
+problem = "Description: Build a program to concurrently analyze data from multiple sources, such as logs, sensor readings, or user interactions.\
+\
+Requirements:\
+\
+Implement a data analysis system that allows data from multiple sources to be analyzed concurrently with various analysis tasks.\
+Ensure that data analysis tasks are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of data sources and analysis tasks (e.g., log analysis, anomaly detection).\
+Execute analysis functions concurrently.\
+Verify that analysis results are saved correctly."
 class DataAnalyzer:
     def __init__(self):
         self.analysis_results = []
@@ -63,7 +64,7 @@ def test_concurrent_data_analysis(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 data_analyzer.analyze_data(data_source, task)
 """
 

@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import time
 # Problem 23: Concurrent Task Execution
 #
-# Description: Build a program that executes tasks concurrently.
-#
-# Requirements:
-#
-# Implement a task execution system that allows multiple tasks to be executed concurrently.
-# Ensure that tasks are executed correctly and concurrently.
-# Test Set:
-#
-# Define a set of tasks with different execution times.
-# Execute these tasks concurrently using the task execution system.
-# Verify that tasks are executed correctly within their specified times.
+problem = "Description: Build a program that executes tasks concurrently.\
+\
+Requirements:\
+\
+Implement a task execution system that allows multiple tasks to be executed concurrently.\
+Ensure that tasks are executed correctly and concurrently.\
+Test Set:\
+\
+Define a set of tasks with different execution times.\
+Execute these tasks concurrently using the task execution system.\
+Verify that tasks are executed correctly within their specified times."
 class TaskExecutor:
     def __init__(self):
         self.completed_tasks = []
@@ -61,7 +62,7 @@ def test_concurrent_task_execution(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 task_executor.execute_task(task_name, execution_time)
 """
 

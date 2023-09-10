@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -7,17 +8,17 @@ from googletrans import Translator
 
 # Problem 57: Concurrent Text Translation
 #
-# Description: Develop a program to concurrently translate text into multiple languages.
-#
-# Requirements:
-#
-# Implement a text translation system that allows multiple text translations to be performed concurrently.
-# Ensure that text translations are accurate and performed concurrently.
-# Test Set:
-#
-# Provide a list of text phrases and target languages.
-# Execute translation functions concurrently.
-# Verify that all translations are correct.
+problem = "Description: Develop a program to concurrently translate text into multiple languages.\
+\
+Requirements:\
+\
+Implement a text translation system that allows multiple text translations to be performed concurrently.\
+Ensure that text translations are accurate and performed concurrently.\
+Test Set:\
+\
+Provide a list of text phrases and target languages.\
+Execute translation functions concurrently.\
+Verify that all translations are correct."
 class TextTranslator:
     def __init__(self):
         self.translations = {}
@@ -71,7 +72,7 @@ def test_concurrent_text_translation(solution_code):
 
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 text_translator.translate_text(text, target_language)
 """
 

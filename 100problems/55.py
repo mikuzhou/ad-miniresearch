@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 47: Concurrent Video Encoding
 #
-# Description: Create a program to concurrently encode a batch of video files.
-#
-# Requirements:
-#
-# Implement a video encoding system that allows multiple video files to be encoded concurrently.
-# Ensure that video encoding is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of video files to encode.
-# Execute video encoding functions concurrently.
-# Verify that all video files are encoded correctly.
+problem = "Description: Create a program to concurrently encode a batch of video files.\
+\
+Requirements:\
+\
+Implement a video encoding system that allows multiple video files to be encoded concurrently.\
+Ensure that video encoding is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of video files to encode.\
+Execute video encoding functions concurrently.\
+Verify that all video files are encoded correctly."
 class VideoEncoder:
     def __init__(self):
         self.encoded_videos = []
@@ -60,7 +61,7 @@ def test_concurrent_video_encoding(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 video_encoder.encode_video(video_file)
 """
 

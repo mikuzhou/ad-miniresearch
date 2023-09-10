@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 30: Concurrent Data Encryption
 #
-# Description: Create a program to encrypt multiple sets of data concurrently.
-#
-# Requirements:
-#
-# Implement a data encryption system that allows multiple data sets to be encrypted concurrently.
-# Ensure that data encryption is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of data sets to be encrypted.
-# Execute data encryption functions concurrently.
-# Verify that all data sets are encrypted correctly.
+problem = "Description: Create a program to encrypt multiple sets of data concurrently.\
+\
+Requirements:\
+\
+Implement a data encryption system that allows multiple data sets to be encrypted concurrently.\
+Ensure that data encryption is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of data sets to be encrypted.\
+Execute data encryption functions concurrently.\
+Verify that all data sets are encrypted correctly."
 class DataEncryptor:
     def __init__(self):
         self.encrypted_data = []
@@ -56,7 +57,7 @@ def test_concurrent_data_encryption(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 data_encryptor.encrypt_data(data)
 """
 

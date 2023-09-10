@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import sqlite3
 # Problem 66: Concurrent Database Updates
 #
-# Description: Develop a program to concurrently update data in a database.
-#
-# Requirements:
-#
-# Implement a database update system that allows multiple updates to be performed on a database concurrently.
-# Ensure that database updates are executed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of update queries and expected results.
-# Execute update functions concurrently.
-# Verify that all updates are applied correctly.
+problem = "Description: Develop a program to concurrently update data in a database.\
+\
+Requirements:\
+\
+Implement a database update system that allows multiple updates to be performed on a database concurrently.\
+Ensure that database updates are executed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of update queries and expected results.\
+Execute update functions concurrently.\
+Verify that all updates are applied correctly."
 
 class DatabaseUpdater:
     def __init__(self):
@@ -71,7 +72,7 @@ def test_concurrent_database_updates(solution_code):
 
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 db_updater.update_database(query, query_id)
 """
 

@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 84: Concurrent Image Recognition
 #
-# Description: Develop a program to concurrently recognize objects in multiple images using different image recognition algorithms.
-#
-# Requirements:
-#
-# Implement an image recognition system that allows multiple images to be analyzed concurrently with various recognition algorithms.
-# Ensure that object recognition is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of image files and recognition tasks (e.g., object detection, facial recognition).
-# Execute recognition functions concurrently.
-# Verify that recognized objects are saved correctly.
+problem = "Description: Develop a program to concurrently recognize objects in multiple images using different image recognition algorithms.\
+\
+Requirements:\
+\
+Implement an image recognition system that allows multiple images to be analyzed concurrently with various recognition algorithms.\
+Ensure that object recognition is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of image files and recognition tasks (e.g., object detection, facial recognition).\
+Execute recognition functions concurrently.\
+Verify that recognized objects are saved correctly."
 class ImageRecognizer:
     def __init__(self):
         self.recognized_objects = []
@@ -63,7 +64,7 @@ def test_concurrent_image_recognition(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 image_recognizer.recognize_objects(image_file, task)
 """
 

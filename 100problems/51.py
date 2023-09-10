@@ -1,22 +1,24 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 43: Concurrent Order Processing
 #
-# Description: Develop a program to concurrently process customer orders.
-#
-# Requirements:
-#
-# Implement an order processing system that allows multiple customer orders to be processed concurrently.
-# Ensure that orders are processed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of customer orders with details.
-# Execute order processing functions concurrently.
-# Verify that all orders are processed correctly.
+
 # python
+problem = "Description: Develop a program to concurrently process customer orders.\
+\
+Requirements:\
+\
+Implement an order processing system that allows multiple customer orders to be processed concurrently.\
+Ensure that orders are processed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of customer orders with details.\
+Execute order processing functions concurrently.\
+Verify that all orders are processed correctly."
 
 class OrderProcessor:
     def __init__(self):
@@ -62,7 +64,7 @@ def test_concurrent_order_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 order_processor.process_order(order_id, customer_name, total_amount)
 """
 

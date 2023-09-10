@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 36: Concurrent Log Processing
 #
-# Description: Design a program to concurrently process logs from multiple sources.
-#
-# Requirements:
-#
-# Implement a log processing system that allows logs from various sources to be processed concurrently.
-# Ensure that log processing is performed correctly and concurrently.
-# Test Set:
-#
-# Provide log data from multiple sources.
-# Execute log processing functions concurrently.
-# Verify that all logs are processed correctly.
+problem = "Description: Design a program to concurrently process logs from multiple sources.\
+\
+Requirements:\
+\
+Implement a log processing system that allows logs from various sources to be processed concurrently.\
+Ensure that log processing is performed correctly and concurrently.\
+Test Set:\
+\
+Provide log data from multiple sources.\
+Execute log processing functions concurrently.\
+Verify that all logs are processed correctly."
 class LogProcessor:
     def __init__(self):
         self.processed_logs = []
@@ -61,7 +62,7 @@ def test_concurrent_log_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 log_processor.process_log(source, log_data)
 """
 

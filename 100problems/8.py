@@ -1,22 +1,23 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 8: Concurrent Text Analysis
 #
-# Description: Build a program that analyzes multiple text documents concurrently.
-#
-# Requirements:
-#
-# Implement a text analysis system that allows multiple documents to be processed concurrently.
-# Extract specific information from each document.
-# Ensure correct text analysis and concurrency.
-# Test Set:
-#
-# Provide a set of text documents.
-# Execute text analysis functions concurrently to extract information (e.g., word count, keyword frequency) from each document.
-# Verify the accuracy of the extracted information.
+problem = "Description: Build a program that analyzes multiple text documents concurrently.\
+\
+Requirements:\
+\
+Implement a text analysis system that allows multiple documents to be processed concurrently.\
+Extract specific information from each document.\
+Ensure correct text analysis and concurrency.\
+Test Set:\
+\
+Provide a set of text documents.\
+Execute text analysis functions concurrently to extract information (e.g., word count, keyword frequency) from each document.\
+Verify the accuracy of the extracted information."
 class TextAnalyzer:
     def __init__(self):
         self.analysis_results = []
@@ -59,8 +60,7 @@ def test_concurrent_text_analysis(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 text_analyzer.analyze_text(text_documents.pop())
 """
-
 test_concurrent_text_analysis(solution_code)

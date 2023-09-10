@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,16 +7,16 @@ from util.threadsanitizer_score import score_python_code
 import time
 # Problem 61: Concurrent Chat Application
 #
-# Description: Develop a program to concurrently handle multiple chat sessions in a chat application.
-#
-# Requirements:
-#
-# Implement a chat application that allows multiple users to send and receive messages concurrently.
-# Ensure that chat sessions are handled correctly and concurrently.
-# Test Set:
-#
-# Simulate multiple users sending messages concurrently.
-# Verify that messages are delivered to the correct recipients.
+problem = "Description: Develop a program to concurrently handle multiple chat sessions in a chat application.\
+\
+Requirements:\
+\
+Implement a chat application that allows multiple users to send and receive messages concurrently.\
+Ensure that chat sessions are handled correctly and concurrently.\
+Test Set:\
+\
+Simulate multiple users sending messages concurrently.\
+Verify that messages are delivered to the correct recipients."
 class ChatApplication:
     def __init__(self):
         self.chat_sessions = {}
@@ -70,7 +71,7 @@ def test_concurrent_chat_application(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 chat_app.start_chat_session(sender, recipient)
 chat_app.send_message(sender, recipient, message)
 """

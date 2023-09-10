@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import random
 # Problem 63: Concurrent Stock Analysis
 #
-# Description: Create a program to concurrently analyze the stock market data for multiple companies.
-#
-# Requirements:
-#
-# Implement a stock analysis system that allows multiple companies' stock data to be analyzed concurrently.
-# Ensure that stock analysis is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of companies and analysis tasks.
-# Execute analysis functions concurrently.
-# Verify that all analysis tasks are completed correctly.
+problem = "Description: Create a program to concurrently analyze the stock market data for multiple companies.\
+\
+Requirements:\
+\
+Implement a stock analysis system that allows multiple companies' stock data to be analyzed concurrently.\
+Ensure that stock analysis is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of companies and analysis tasks.\
+Execute analysis functions concurrently.\
+Verify that all analysis tasks are completed correctly."
 class StockAnalyzer:
     def __init__(self):
         self.analysis_results = {}
@@ -65,7 +66,7 @@ def test_concurrent_stock_analysis(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 stock_analyzer.analyze_stock(company_name, analysis_task)
 """
 

@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import random
 # Problem 69: Concurrent Payment Processing
 #
-# Description: Develop a program to concurrently process payments from multiple customers.
-#
-# Requirements:
-#
-# Implement a payment processing system that allows multiple payments to be processed concurrently.
-# Ensure that payments are processed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of customer payments and payment processing tasks.
-# Execute payment processing functions concurrently.
-# Verify that all payments are processed successfully.
+problem = "Description: Develop a program to concurrently process payments from multiple customers.\
+\
+Requirements:\
+\
+Implement a payment processing system that allows multiple payments to be processed concurrently.\
+Ensure that payments are processed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of customer payments and payment processing tasks.\
+Execute payment processing functions concurrently.\
+Verify that all payments are processed successfully."
 class PaymentProcessor:
     def __init__(self):
         self.processed_payments = []
@@ -66,7 +67,7 @@ def test_concurrent_payment_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 payment_processor.process_payment(customer_name, amount)
 """
 

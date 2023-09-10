@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,18 +7,18 @@ from util.threadsanitizer_score import score_python_code
 import time
 # Problem 33: Concurrent Game Simulation
 #
-# Description: Design a program that simulates a game concurrently.
-#
-# Requirements:
-#
-# Implement a game simulation system that allows multiple players to interact with the game concurrently.
-# Ensure that the game simulation is performed correctly and concurrently.
-# Test Set:
-#
-# Define a set of game scenarios with multiple players.
-# Execute game simulation functions concurrently.
-# Verify that the game simulation results are correct.
-
+problem = "Description: Design a program that simulates a game concurrently.\
+\
+Requirements:\
+\
+Implement a game simulation system that allows multiple players to interact with the game concurrently.\
+Ensure that the game simulation is performed correctly and concurrently.\
+Test Set:\
+\
+Define a set of game scenarios with multiple players.\
+Execute game simulation functions concurrently.\
+Verify that the game simulation results are correct.\
+"
 class GameSimulator:
     def __init__(self):
         self.game_results = []
@@ -59,7 +60,7 @@ def test_concurrent_game_simulation(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 game_simulator.simulate_game(game_scenario)
 """
 

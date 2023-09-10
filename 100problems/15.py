@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import time
 # Problem 15: Concurrent Task Scheduler
 #
-# Description: Design a task scheduler that allows multiple tasks to be scheduled and executed concurrently.
-#
-# Requirements:
-#
-# Implement a task scheduling system that allows multiple tasks to be scheduled and executed concurrently.
-# Ensure that tasks are executed correctly and concurrently.
-# Test Set:
-#
-# Define a set of tasks with different execution times.
-# Schedule these tasks to run concurrently using the task scheduler.
-# Verify that tasks are executed correctly within their specified times.
+problem = "Description: Design a task scheduler that allows multiple tasks to be scheduled and executed concurrently.\
+\
+Requirements:\
+\
+Implement a task scheduling system that allows multiple tasks to be scheduled and executed concurrently.\
+Ensure that tasks are executed correctly and concurrently.\
+Test Set:   tasks = [(\"Task1\", 2), (\"Task2\", 1), (\"Task3\", 3)]\
+\
+Define a set of tasks with different execution times.\
+Schedule these tasks to run concurrently using the task scheduler.\
+Verify that tasks are executed correctly within their specified times."
 class TaskScheduler:
     def __init__(self):
         self.completed_tasks = []
@@ -61,7 +62,7 @@ def test_concurrent_task_scheduler(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 task_scheduler.schedule_task(task_name, execution_time)
 """
 

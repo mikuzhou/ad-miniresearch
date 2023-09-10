@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 from cryptography.fernet import Fernet
 # Problem 78: Concurrent Data Encryption
 #
-# Description: Build a program to concurrently encrypt sensitive data using multiple encryption algorithms.
-#
-# Requirements:
-#
-# Implement a data encryption system that allows multiple pieces of data to be encrypted concurrently using different encryption algorithms.
-# Ensure that data encryption is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of data pieces and encryption algorithms.
-# Execute encryption functions concurrently.
-# Verify that data is encrypted correctly.
+problem = "Description: Build a program to concurrently encrypt sensitive data using multiple encryption algorithms.\
+\
+Requirements:\
+\
+Implement a data encryption system that allows multiple pieces of data to be encrypted concurrently using different encryption algorithms.\
+Ensure that data encryption is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of data pieces and encryption algorithms.\
+Execute encryption functions concurrently.\
+Verify that data is encrypted correctly."
 class DataEncryptor:
     def __init__(self):
         self.encrypted_data = []
@@ -66,7 +67,7 @@ def test_concurrent_data_encryption(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 data_encryptor.encrypt_data(data, encryption_algorithm)
 """
 

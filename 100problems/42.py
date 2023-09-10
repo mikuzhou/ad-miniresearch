@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import requests
 # Problem 37: Concurrent Search Engine
 #
-# Description: Design a concurrent search engine that searches multiple search engines concurrently and aggregates the results.
-#
-# Requirements:
-#
-# Implement a concurrent search engine that allows multiple search queries to be executed on multiple search engines concurrently.
-# Ensure that search results are aggregated correctly and concurrently.
-# Test Set:
-#
-# Provide a list of search queries and search engines.
-# Execute search functions concurrently.
-# Verify that search results are correctly aggregated.
+problem = "Description: Design a concurrent search engine that searches multiple search engines concurrently and aggregates the results.\
+\
+Requirements:\
+\
+Implement a concurrent search engine that allows multiple search queries to be executed on multiple search engines concurrently.\
+Ensure that search results are aggregated correctly and concurrently.\
+Test Set:\
+\
+Provide a list of search queries and search engines.\
+Execute search functions concurrently.\
+Verify that search results are correctly aggregated."
 class SearchEngine:
     def __init__(self):
         self.search_results = {}
@@ -66,7 +67,7 @@ def test_concurrent_search_engine(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 search_engine.search(query, search_engine)
 """
 

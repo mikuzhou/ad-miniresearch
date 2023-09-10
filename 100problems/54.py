@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 46: Concurrent Sensor Readings
 #
-# Description: Develop a program to concurrently collect sensor readings from multiple sensors.
-#
-# Requirements:
-#
-# Implement a sensor reading system that allows multiple sensors to collect and report readings concurrently.
-# Ensure that sensor readings are collected correctly and concurrently.
-# Test Set:
-#
-# Provide a list of sensors and their readings.
-# Execute sensor reading functions concurrently.
-# Verify that all sensor readings are collected correctly.
+problem = "Description: Develop a program to concurrently collect sensor readings from multiple sensors.\
+\
+Requirements:\
+\
+Implement a sensor reading system that allows multiple sensors to collect and report readings concurrently.\
+Ensure that sensor readings are collected correctly and concurrently.\
+Test Set:\
+\
+Provide a list of sensors and their readings.\
+Execute sensor reading functions concurrently.\
+Verify that all sensor readings are collected correctly."
 class SensorReader:
     def __init__(self):
         self.sensor_readings = {}
@@ -63,7 +64,7 @@ def test_concurrent_sensor_readings(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 sensor_reader.read_sensor(sensor_id, reading)
 """
 

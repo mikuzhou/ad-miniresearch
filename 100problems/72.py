@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import random
 # Problem 67: Concurrent Sensor Data Processing
 #
-# Description: Build a program to concurrently process data from multiple sensors.
-#
-# Requirements:
-#
-# Implement a sensor data processing system that allows data from multiple sensors to be processed concurrently.
-# Ensure that data processing is executed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of sensor data and processing tasks.
-# Execute processing functions concurrently.
-# Verify that all data is processed correctly.
+problem = "Description: Build a program to concurrently process data from multiple sensors.\
+\
+Requirements:\
+\
+Implement a sensor data processing system that allows data from multiple sensors to be processed concurrently.\
+Ensure that data processing is executed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of sensor data and processing tasks.\
+Execute processing functions concurrently.\
+Verify that all data is processed correctly."
 class SensorDataProcessor:
     def __init__(self):
         self.processed_data = []
@@ -63,7 +64,7 @@ def test_concurrent_sensor_data_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 sensor_processor.process_data(sensor_data, task)
 """
 

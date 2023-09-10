@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import pandas as pd
 # Problem 37: Concurrent Data Analysis
 #
-# Description: Develop a program that concurrently analyzes data from multiple sources.
-#
-# Requirements:
-#
-# Implement a data analysis system that allows multiple data sources to be analyzed concurrently.
-# Ensure that data analysis is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of data sources to analyze.
-# Execute data analysis functions concurrently.
-# Verify that all data analysis results are correct.
+problem = "Description: Develop a program that concurrently analyzes data from multiple sources.\
+\
+Requirements:\
+\
+Implement a data analysis system that allows multiple data sources to be analyzed concurrently.\
+Ensure that data analysis is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of data sources to analyze.\
+Execute data analysis functions concurrently.\
+Verify that all data analysis results are correct."
 class DataAnalyzer:
     def __init__(self):
         self.analysis_results = {}
@@ -67,7 +68,7 @@ def test_concurrent_data_analysis(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 data_analyzer.analyze_data(data_source)
 """
 

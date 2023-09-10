@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -7,13 +8,13 @@ import sqlite3
 import random
 # Problem 6: Concurrent Database Access
 #
-# Description: Design a program that performs concurrent database operations using multiple threads.
-#
-# Requirements:
-#
-# Implement a class that interacts with a database concurrently.
-# Allow multiple threads to read and write data to the database.
-# Ensure that the database operations are correct and thread-safe.
+problem = "Description: Design a program that performs concurrent database operations using multiple threads.\
+\
+Requirements:\
+\
+Implement a class that interacts with a database concurrently.\
+Allow multiple threads to read and write data to the database.\
+Ensure that the database operations are correct and thread-safe."
 class DatabaseManager:
     def __init__(self, database_name):
         self.database_name = database_name
@@ -80,9 +81,8 @@ def test_concurrent_database_access(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 value = random.random()
 database_manager.insert_data(value)
 """
-
 test_concurrent_database_access(solution_code)

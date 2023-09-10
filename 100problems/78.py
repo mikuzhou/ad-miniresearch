@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -7,17 +8,17 @@ import requests
 import json
 # Problem 73: Concurrent Weather Data Retrieval
 #
-# Description: Develop a program to concurrently retrieve weather data for multiple cities from different sources.
-#
-# Requirements:
-#
-# Implement a weather data retrieval system that allows data for multiple cities to be fetched concurrently from different sources (e.g., APIs).
-# Ensure that weather data retrieval is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of cities and data sources (e.g., APIs).
-# Execute retrieval functions concurrently.
-# Verify that weather data is fetched correctly for all cities.
+problem = "Description: Develop a program to concurrently retrieve weather data for multiple cities from different sources.\
+\
+Requirements:\
+\
+Implement a weather data retrieval system that allows data for multiple cities to be fetched concurrently from different sources (e.g., APIs).\
+Ensure that weather data retrieval is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of cities and data sources (e.g., APIs).\
+Execute retrieval functions concurrently.\
+Verify that weather data is fetched correctly for all cities."
 
 class WeatherDataRetriever:
     def __init__(self):
@@ -73,7 +74,7 @@ def test_concurrent_weather_data_retrieval(solution_code):
 
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 weather_retriever.retrieve_weather_data(city, data_source)
 """
 

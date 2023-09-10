@@ -1,20 +1,21 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 38: Concurrent Game Server
 #
-# Description: Develop a program for a concurrent game server.
-#
-# Requirements:
-#
-# Implement a game server that allows multiple players to interact concurrently in an online game.
-# Ensure that player actions and interactions are processed correctly and concurrently.
-# Test Set:
-#
-# Simulate multiple players interacting with the game server concurrently.
-# Verify that player actions and interactions are processed correctly.
+problem = "Description: Develop a program for a concurrent game server.\
+\
+Requirements:\
+\
+Implement a game server that allows multiple players to interact concurrently in an online game.\
+Ensure that player actions and interactions are processed correctly and concurrently.\
+Test Set:\
+\
+Simulate multiple players interacting with the game server concurrently.\
+Verify that player actions and interactions are processed correctly."
 class GameServer:
     def __init__(self):
         self.player_actions = []
@@ -56,7 +57,7 @@ def test_concurrent_game_server(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 game_server.process_player_action(player_id, action)
 """
 

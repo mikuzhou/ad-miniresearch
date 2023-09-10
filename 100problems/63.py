@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 from PIL import Image
 # Problem 58: Concurrent Image Compression
 #
-# Description: Build a program to concurrently compress a batch of images.
-#
-# Requirements:
-#
-# Implement an image compression system that allows multiple images to be compressed concurrently.
-# Ensure that image compression is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of images to compress.
-# Execute compression functions concurrently.
-# Verify that all images are compressed correctly.
+problem = "Description: Build a program to concurrently compress a batch of images.\
+\
+Requirements:\
+\
+Implement an image compression system that allows multiple images to be compressed concurrently.\
+Ensure that image compression is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of images to compress.\
+Execute compression functions concurrently.\
+Verify that all images are compressed correctly."
 class ImageCompressor:
     def __init__(self):
         self.compressed_images = []
@@ -64,7 +65,7 @@ def test_concurrent_image_compression(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 image_compressor.compress_image(image_path, output_path)
 """
 

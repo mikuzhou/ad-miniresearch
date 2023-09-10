@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -7,17 +8,17 @@ import sqlite3
 #
 # Problem 56: Concurrent Database Queries
 #
-# Description: Build a program to concurrently query a database for data.
-#
-# Requirements:
-#
-# Implement a database querying system that allows multiple database queries to be executed concurrently.
-# Ensure that database queries are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of database queries and expected results.
-# Execute query functions concurrently.
-# Verify that all queries return the correct results.
+problem = "Description: Build a program to concurrently query a database for data.\
+\
+Requirements:\
+\
+Implement a database querying system that allows multiple database queries to be executed concurrently.\
+Ensure that database queries are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of database queries and expected results.\
+Execute query functions concurrently.\
+Verify that all queries return the correct results."
 class DatabaseQuery:
     def __init__(self):
         self.query_results = {}
@@ -73,7 +74,7 @@ def test_concurrent_database_queries(solution_code):
 
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 db_query.execute_query(query, query_id)
 """
 

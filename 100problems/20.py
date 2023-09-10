@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,16 +7,16 @@ from util.threadsanitizer_score import score_python_code
 from collections import defaultdict
 # Problem 20: Concurrent Stock Trading
 #
-# Description: Create a program to simulate concurrent stock trading operations.
-#
-# Requirements:
-#
-# Implement a stock trading system that allows multiple traders to buy and sell stocks concurrently.
-# Ensure that stock trading operations are performed correctly and concurrently.
-# Test Set:
-#
-# Simulate multiple traders buying and selling stocks concurrently.
-# Verify that the stock trading operations are correct considering concurrent transactions.
+problem = "Description: Create a program to simulate concurrent stock trading operations.\
+\
+Requirements:\
+\
+Implement a stock trading system that allows multiple traders to buy and sell stocks concurrently.\
+Ensure that stock trading operations are performed correctly and concurrently.\
+Test Set:\
+\
+Simulate multiple traders buying and selling stocks concurrently.\
+Verify that the stock trading operations are correct considering concurrent transactions."
 class StockMarket:
     def __init__(self):
         self.stock_prices = defaultdict(float)
@@ -87,7 +88,7 @@ def test_concurrent_stock_trading(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 if stock_trader.trade_stock(stock_symbol, action, price):
     # Handle successful stock trade as needed
     pass

@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 83: Concurrent Document Processing
 #
-# Description: Create a program to concurrently process multiple documents, such as parsing, analyzing, and generating reports.
-#
-# Requirements:
-#
-# Implement a document processing system that allows multiple documents to be processed concurrently with different tasks.
-# Ensure that document processing tasks are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of document files and processing tasks (e.g., parse, analyze, generate report).
-# Execute processing functions concurrently.
-# Verify that processed documents are saved correctly.
+problem = "Description: Create a program to concurrently process multiple documents, such as parsing, analyzing, and generating reports.\
+\
+Requirements:\
+\
+Implement a document processing system that allows multiple documents to be processed concurrently with different tasks.\
+Ensure that document processing tasks are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of document files and processing tasks (e.g., parse, analyze, generate report).\
+Execute processing functions concurrently.\
+Verify that processed documents are saved correctly."
 class DocumentProcessor:
     def __init__(self):
         self.processed_documents = []
@@ -63,7 +64,7 @@ def test_concurrent_document_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 document_processor.process_document(document_file, task)
 """
 

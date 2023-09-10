@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import gzip
 # Problem 45: Concurrent File Compression
 #
-# Description: Create a program to concurrently compress a batch of files.
-#
-# Requirements:
-#
-# Implement a file compression system that allows multiple files to be compressed concurrently.
-# Ensure that file compression is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of files to compress.
-# Execute file compression functions concurrently.
-# Verify that all files are compressed correctly.
+problem = "Description: Create a program to concurrently compress a batch of files.\
+\
+Requirements:\
+\
+Implement a file compression system that allows multiple files to be compressed concurrently.\
+Ensure that file compression is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of files to compress.\
+Execute file compression functions concurrently.\
+Verify that all files are compressed correctly."
 class FileCompressor:
     def __init__(self):
         self.compressed_files = []
@@ -61,7 +62,7 @@ def test_concurrent_file_compression(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 file_compressor.compress_file(file_name)
 """
 

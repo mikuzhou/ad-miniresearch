@@ -1,20 +1,21 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 10: Concurrent Resource Allocation
 #
-# Description: Develop a program that allocates and manages resources concurrently.
-#
-# Requirements:
-#
-# Implement a resource allocation system that allows multiple threads to request and release resources.
-# Ensure that resource allocation and release are handled correctly and concurrently.
-# Test Set:
-#
-# Simulate multiple threads requesting and releasing resources.
-# Verify that the resource allocation and release are handled correctly, considering resource limits.
+problem = "Description: Develop a program that allocates and manages resources concurrently.\
+\
+Requirements:\
+\
+Implement a resource allocation system that allows multiple threads to request and release resources.\
+Ensure that resource allocation and release are handled correctly and concurrently.\
+Test Set:\
+\
+Simulate multiple threads requesting and releasing resources.\
+Verify that the resource allocation and release are handled correctly, considering resource limits."
 class ResourceManager:
     def __init__(self, max_resources):
         self.available_resources = max_resources
@@ -60,7 +61,7 @@ def test_concurrent_resource_allocation(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem);"""
 if resource_manager.request_resources(2):
     resource_manager.release_resources(1)
 """

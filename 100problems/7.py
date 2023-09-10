@@ -1,22 +1,23 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 7: Concurrent Task Execution
 #
-# Description: Create a program that performs multiple tasks concurrently and tracks their completion.
-#
-# Requirements:
-#
-# Implement a task execution system that allows multiple tasks to run concurrently.
-# Track the completion status of each task.
-# Ensure that tasks are executed correctly and concurrently.
-# Test Set:
-#
-# Define a set of tasks (e.g., functions to calculate factorial or sum numbers).
-# Execute these tasks concurrently and track their completion.
-# Verify that all tasks complete successfully.
+problem = "Description: Create a program that performs multiple tasks concurrently and tracks their completion.\
+\
+Requirements:\
+\
+Implement a task execution system that allows multiple tasks to run concurrently.\
+Track the completion status of each task.\
+Ensure that tasks are executed correctly and concurrently.\
+Test Set:\
+\
+Define a set of tasks (e.g., functions to calculate factorial or sum numbers).\
+Execute these tasks concurrently and track their completion.\
+Verify that all tasks complete successfully."
 class TaskExecutor:
     def __init__(self):
         self.tasks = []
@@ -63,7 +64,7 @@ def test_concurrent_task_execution(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 def factorial(n):
     if n == 0:
         return 1
@@ -72,5 +73,4 @@ def factorial(n):
 
 task_executor.add_task(factorial, 5)
 """
-
 test_concurrent_task_execution(solution_code)

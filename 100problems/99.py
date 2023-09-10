@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 95: Concurrent Task Scheduler
 #
-# Description: Develop a concurrent task scheduler that allows multiple tasks to be executed concurrently on a set of worker threads.
-#
-# Requirements:
-#
-# Implement a task scheduler that can execute multiple tasks concurrently on worker threads.
-# Ensure that tasks are scheduled correctly and executed concurrently.
-# Test Set:
-#
-# Provide a list of tasks with their execution times.
-# Execute tasks concurrently on worker threads.
-# Verify that tasks are completed correctly and concurrently.
+problem = "Description: Develop a concurrent task scheduler that allows multiple tasks to be executed concurrently on a set of worker threads.\
+\
+Requirements:\
+\
+Implement a task scheduler that can execute multiple tasks concurrently on worker threads.\
+Ensure that tasks are scheduled correctly and executed concurrently.\
+Test Set:\
+\
+Provide a list of tasks with their execution times.\
+Execute tasks concurrently on worker threads.\
+Verify that tasks are completed correctly and concurrently."
 class TaskScheduler:
     def __init__(self, num_workers):
         self.num_workers = num_workers
@@ -63,7 +64,7 @@ def test_concurrent_task_scheduler(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 task_scheduler.execute_task(task, execution_time)
 """
 

@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 from PIL import Image
 # Problem 42: Concurrent Image Processing
 #
-# Description: Create a program to concurrently process a batch of images.
-#
-# Requirements:
-#
-# Implement an image processing system that allows multiple images to be processed concurrently.
-# Ensure that image processing is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of image files to process.
-# Execute image processing functions concurrently.
-# Verify that all images are processed correctly.
+problem = "Description: Create a program to concurrently process a batch of images.\
+\
+Requirements:\
+\
+Implement an image processing system that allows multiple images to be processed concurrently.\
+Ensure that image processing is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of image files to process.\
+Execute image processing functions concurrently.\
+Verify that all images are processed correctly."
 class ImageProcessor:
     def __init__(self):
         self.processed_images = []
@@ -62,7 +63,7 @@ def test_concurrent_image_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 image_processor.process_image(image_file)
 """
 

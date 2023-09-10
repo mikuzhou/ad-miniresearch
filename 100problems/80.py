@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import sqlite3
 # Problem 75: Concurrent Database Queries
 #
-# Description: Develop a program to concurrently query a database for data from multiple clients.
-#
-# Requirements:
-#
-# Implement a database query system that allows multiple clients to query a database concurrently.
-# Ensure that database queries are executed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of queries from multiple clients.
-# Execute query functions concurrently.
-# Verify that data is retrieved correctly for all clients.
+problem = "Description: Develop a program to concurrently query a database for data from multiple clients.\
+\
+Requirements:\
+\
+Implement a database query system that allows multiple clients to query a database concurrently.\
+Ensure that database queries are executed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of queries from multiple clients.\
+Execute query functions concurrently.\
+Verify that data is retrieved correctly for all clients."
 
 class DatabaseQueryHandler:
     def __init__(self):
@@ -71,7 +72,7 @@ def test_concurrent_database_queries(solution_code):
 
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 query_handler.execute_query(client_id, query)
 """
 

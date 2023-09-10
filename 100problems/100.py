@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import requests
 # Problem 96: Concurrent Web Scraping
 # 
-# Description: Create a concurrent web scraping program that fetches data from multiple web pages concurrently.
-# 
-# Requirements:
-# 
-# Implement a web scraping system that allows multiple web pages to be fetched concurrently.
-# Ensure that web pages are fetched correctly and concurrently.
-# Test Set:
-# 
-# Provide a list of URLs to fetch data from.
-# Execute web scraping functions concurrently.
-# Verify that data is fetched correctly.
+problem = "Description: Create a concurrent web scraping program that fetches data from multiple web pages concurrently.\
+\
+Requirements:\
+\
+Implement a web scraping system that allows multiple web pages to be fetched concurrently.\
+Ensure that web pages are fetched correctly and concurrently.\
+Test Set:\
+\
+Provide a list of URLs to fetch data from.\
+Execute web scraping functions concurrently.\
+Verify that data is fetched correctly."
 class WebScraper:
     def __init__(self):
         self.fetched_data = {}
@@ -65,7 +66,7 @@ def test_concurrent_web_scraping(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 web_scraper.fetch_data(url)
 """
 

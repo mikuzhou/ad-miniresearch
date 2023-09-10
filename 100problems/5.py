@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -7,17 +8,18 @@ import requests
 from bs4 import BeautifulSoup
 # Problem 5: Concurrent Web Scraping
 #
-# Description: Build a program that scrapes information from multiple web pages concurrently.
-#
-# Requirements:
-#
-# Implement a function to scrape web pages concurrently.
-# Allow multiple threads to scrape web pages concurrently.
-# Ensure accurate web scraping and thread-safety.
-# Test Set:
-#
-# Scrape information from multiple web pages concurrently and return the total number of words found.
+
 # Automated Testing Python Code (Simplified):
+problem = "Description: Build a program that scrapes information from multiple web pages concurrently.\
+\
+Requirements:\
+\
+Implement a function to scrape web pages concurrently.\
+Allow multiple threads to scrape web pages concurrently.\
+Ensure accurate web scraping and thread-safety.\
+Test Set:    urls = [\"http://website1.com", "http://website2.com", "http://website3.com\"]\
+\
+Scrape information from multiple web pages concurrently and return the total number of words found."
 class WebScraper:
     def __init__(self):
         self.total_words = 0
@@ -60,10 +62,9 @@ def test_concurrent_web_scraping(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 web_scraper = WebScraper()
 url = "http://website1.com"
 web_scraper.scrape_web_page(url)
 """
-
 test_concurrent_web_scraping(solution_code)

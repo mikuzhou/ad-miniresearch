@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 39: Concurrent Search Engine
 #
-# Description: Build a program for concurrent searching across multiple data sources.
-#
-# Requirements:
-#
-# Implement a search engine that allows multiple search queries to be executed concurrently across various data sources.
-# Ensure that search queries are processed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of search queries and data sources to search.
-# Execute search queries concurrently.
-# Verify that search results are accurate.
+problem = "Description: Build a program for concurrent searching across multiple data sources.\
+\
+Requirements:\
+\
+Implement a search engine that allows multiple search queries to be executed concurrently across various data sources.\
+Ensure that search queries are processed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of search queries and data sources to search.\
+Execute search queries concurrently.\
+Verify that search results are accurate."
 class SearchEngine:
     def __init__(self):
         self.search_results = {}
@@ -63,7 +64,7 @@ def test_concurrent_search_engine(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 search_engine.search(query, data_source)
 """
 

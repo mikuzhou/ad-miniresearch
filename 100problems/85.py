@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 80: Concurrent Video Processing
 #
-# Description: Create a program to concurrently process multiple videos, such as resizing, cropping, or applying filters.
-#
-# Requirements:
-#
-# Implement a video processing system that allows multiple videos to be processed concurrently with different tasks.
-# Ensure that video processing tasks are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of video files and processing tasks (e.g., resize, crop, filter).
-# Execute processing functions concurrently.
-# Verify that processed videos are saved correctly.
+problem = "Description: Create a program to concurrently process multiple videos, such as resizing, cropping, or applying filters.\
+\
+Requirements:\
+\
+Implement a video processing system that allows multiple videos to be processed concurrently with different tasks.\
+Ensure that video processing tasks are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of video files and processing tasks (e.g., resize, crop, filter).\
+Execute processing functions concurrently.\
+Verify that processed videos are saved correctly."
 class VideoProcessor:
     def __init__(self):
         self.processed_videos = []
@@ -63,7 +64,7 @@ def test_concurrent_video_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 video_processor.process_video(video_file, task)
 """
 

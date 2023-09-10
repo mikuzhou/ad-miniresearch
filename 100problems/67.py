@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 62: Concurrent Video Editing
 #
-# Description: Build a program to concurrently edit multiple video files.
-#
-# Requirements:
-#
-# Implement a video editing system that allows multiple video files to be edited concurrently.
-# Ensure that video editing operations are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of video files and editing tasks.
-# Execute video editing functions concurrently.
-# Verify that all video files are edited correctly.
+problem = "Description: Build a program to concurrently edit multiple video files.\
+\
+Requirements:\
+\
+Implement a video editing system that allows multiple video files to be edited concurrently.\
+Ensure that video editing operations are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of video files and editing tasks.\
+Execute video editing functions concurrently.\
+Verify that all video files are edited correctly."
 class VideoEditor:
     def __init__(self):
         self.edited_videos = []
@@ -63,7 +64,7 @@ def test_concurrent_video_editing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 video_editor.edit_video(video_file, edit_task)
 """
 

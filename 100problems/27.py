@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,16 +7,16 @@ from util.threadsanitizer_score import score_python_code
 import time
 # Problem 25: Concurrent Sensor Readings
 #
-# Description: Design a program for reading sensor data concurrently.
-#
-# Requirements:
-#
-# Implement a sensor reading system that allows multiple sensors to read data concurrently.
-# Ensure that sensor data is read correctly and concurrently.
-# Test Set:
-#
-# Simulate multiple sensors reading data concurrently.
-# Verify that the sensor data is read correctly.
+problem = "Description: Design a program for reading sensor data concurrently.\
+\
+Requirements:\
+\
+Implement a sensor reading system that allows multiple sensors to read data concurrently.\
+Ensure that sensor data is read correctly and concurrently.\
+Test Set:\
+\
+Simulate multiple sensors reading data concurrently.\
+Verify that the sensor data is read correctly."
 class Sensor:
     def __init__(self, sensor_id):
         self.sensor_id = sensor_id
@@ -60,7 +61,7 @@ def test_concurrent_sensor_readings(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 sensor_data.append(sensor.read_data())
 """
 

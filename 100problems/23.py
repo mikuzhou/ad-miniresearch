@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 21: Concurrent File Processing
 #
-# Description: Create a program that concurrently processes a batch of files.
-#
-# Requirements:
-#
-# Implement a file processing system that allows multiple files to be processed concurrently.
-# Ensure that files are processed correctly and concurrently.
-# Test Set:
-#
-# Provide a set of files for processing.
-# Execute file processing functions concurrently.
-# Verify that all files are processed correctly.
+problem = "Description: Create a program that concurrently processes a batch of files.\
+\
+Requirements:\
+\
+Implement a file processing system that allows multiple files to be processed concurrently.\
+Ensure that files are processed correctly and concurrently.\
+Test Set:\
+\
+Provide a set of files for processing.\
+Execute file processing functions concurrently.\
+Verify that all files are processed correctly."
 class FileProcessor:
     def __init__(self):
         self.processed_files = []
@@ -56,7 +57,7 @@ def test_concurrent_file_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 file_processor.process_file(file_path)
 """
 

@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import numpy as np
 # Problem 13: Concurrent Matrix Multiplication
 #
-# Description: Create a program that performs matrix multiplication concurrently.
-#
-# Requirements:
-#
-# Implement a matrix multiplication system that allows multiple matrix multiplications to be performed concurrently.
-# Ensure that matrix multiplications are done correctly and concurrently.
-# Test Set:
-#
-# Provide a set of matrices for multiplication.
-# Execute matrix multiplication functions concurrently.
-# Verify that matrix multiplications are done correctly.
+problem = "Description: Create a program that performs matrix multiplication concurrently.\
+\
+Requirements:\
+\
+Implement a matrix multiplication system that allows multiple matrix multiplications to be performed concurrently.\
+Ensure that matrix multiplications are done correctly and concurrently.\
+Test Set:\
+\
+Provide a set of matrices for multiplication.\
+Execute matrix multiplication functions concurrently.\
+Verify that matrix multiplications are done correctly."
 class MatrixMultiplier:
     def __init__(self):
         self.result_matrices = []
@@ -63,7 +64,7 @@ def test_concurrent_matrix_multiplication(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 result = np.dot(matrix1, matrix2)
 matrix_multiplier.result_matrices.append(result)
 """

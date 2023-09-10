@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,18 +7,18 @@ from util.threadsanitizer_score import score_python_code
 from PIL import Image, ImageFilter
 # Problem 9: Concurrent Image Filters
 #
-# Description: Design a program that applies image filters concurrently to a set of images.
-#
-# Requirements:
-#
-# Implement a system for applying image filters concurrently.
-# Allow multiple threads to process images with different filters concurrently.
-# Ensure that image filtering is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a set of images.
-# Execute image filtering functions concurrently to apply various filters (e.g., grayscale, blur) to each image.
-# Verify that the filtered images are correct.
+problem = "Description: Design a program that applies image filters concurrently to a set of images.\
+\
+Requirements:\
+\
+Implement a system for applying image filters concurrently.\
+Allow multiple threads to process images with different filters concurrently.\
+Ensure that image filtering is performed correctly and concurrently.\
+Test Set:[\"image1.jpg", "image2.jpg", "image3.jpg\"]\
+\
+Provide a set of images.\
+Execute image filtering functions concurrently to apply various filters (e.g., grayscale, blur) to each image.\
+Verify that the filtered images are correct."
 class ImageFilterApplicator:
     def __init__(self):
         self.filtered_images = []
@@ -61,8 +62,8 @@ def test_concurrent_image_filters(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
-image_filter_applicator.apply_filter(Image.open(image_path), filter_name)
+solution_code = pythonCodeGenerator(problem)
 """
+image_filter_applicator.apply_filter(Image.open(image_path), filter_name)"""
 
 test_concurrent_image_filters(solution_code)

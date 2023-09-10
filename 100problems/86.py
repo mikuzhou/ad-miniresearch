@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 81: Concurrent Image Rendering
 #
-# Description: Develop a program to concurrently render multiple images using different rendering techniques.
-#
-# Requirements:
-#
-# Implement an image rendering system that allows multiple images to be rendered concurrently with various techniques.
-# Ensure that image rendering is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of image files and rendering techniques (e.g., ray tracing, rasterization).
-# Execute rendering functions concurrently.
-# Verify that rendered images are saved correctly.
+problem = "Description: Develop a program to concurrently render multiple images using different rendering techniques.\
+\
+Requirements:\
+\
+Implement an image rendering system that allows multiple images to be rendered concurrently with various techniques.\
+Ensure that image rendering is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of image files and rendering techniques (e.g., ray tracing, rasterization).\
+Execute rendering functions concurrently.\
+Verify that rendered images are saved correctly."
 class ImageRenderer:
     def __init__(self):
         self.rendered_images = []
@@ -63,7 +64,7 @@ def test_concurrent_image_rendering(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 image_renderer.render_image(image_file, technique)
 """
 

@@ -1,7 +1,9 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import pylint
 from concurrent.futures import ThreadPoolExecutor
 import threading
+from util.code_generate import pythonCodeGenerator
 from threading import Thread
 import atexit
 import os
@@ -21,28 +23,29 @@ from threading import Thread
 from types import FunctionType
 from concurrent.futures import ThreadPoolExecutor
 import threading
+from util.code_generate import pythonCodeGenerator
 import time
 from typing import List
 import concurrent.futures
 import random
 import threading
+from util.code_generate import pythonCodeGenerator
+
 
 
 
 
 # Problem 1: Concurrent Data Processing
-#
-# Description: Create a program that processes a list of data concurrently using multiple threads.
-#
-# Requirements:
-#
-# Implement a function that processes data concurrently.
-# Divide the data into smaller subtasks for parallel processing.
-# Ensure accurate data processing and thread-safety.
-# Test Set:
-#
-# Process a list of numbers and return their sum.
-# Automated Testing Python Code (Simplified):
+problem = "Description: Create a program that processes a list of data concurrently using multiple threads.\
+Requirements:\
+Implement a function that processes data concurrently.\
+Divide the data into smaller subtasks for parallel processing.\
+Ensure accurate data processing and thread-safety.\
+Test Set:[1, 2, 3, 4, 5]\
+\
+Process a list of numbers and return their sum."
+
+
 class DataProcessor:
     def __init__(self):
         self.result = None
@@ -83,10 +86,10 @@ def test_concurrent_data_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem)
+"""
 data_processor = DataProcessor()
 data = [1, 2, 3, 4, 5]
 data_processor.process_data(data)
 """
-
 test_concurrent_data_processing(solution_code)

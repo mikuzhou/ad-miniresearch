@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 31: Concurrent Search Engine Crawling
 #
-# Description: Create a program to crawl web pages concurrently.
-#
-# Requirements:
-#
-# Implement a web crawling system that allows multiple web pages to be crawled concurrently.
-# Ensure that web pages are crawled correctly and concurrently.
-# Test Set:
-#
-# Provide a set of web pages for crawling.
-# Execute web crawling functions concurrently.
-# Verify that all web pages are crawled correctly.
+problem = "Description: Create a program to crawl web pages concurrently.\
+\
+Requirements:\
+\
+Implement a web crawling system that allows multiple web pages to be crawled concurrently.\
+Ensure that web pages are crawled correctly and concurrently.\
+Test Set:\
+\
+Provide a set of web pages for crawling.\
+Execute web crawling functions concurrently.\
+Verify that all web pages are crawled correctly."
 class WebCrawler:
     def __init__(self):
         self.crawled_pages = []
@@ -56,7 +57,7 @@ def test_concurrent_web_crawling(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 web_crawler.crawl_page(page_url)
 """
 

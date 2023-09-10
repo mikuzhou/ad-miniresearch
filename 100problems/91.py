@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import shutil
 # Problem 87: Concurrent File Backup
 #
-# Description: Develop a program to concurrently back up multiple files to a backup server.
-#
-# Requirements:
-#
-# Implement a file backup system that allows multiple files to be backed up concurrently.
-# Ensure that file backups are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of files to be backed up.
-# Execute backup functions concurrently.
-# Verify that files are backed up correctly.
+problem = "Description: Develop a program to concurrently back up multiple files to a backup server.\
+\
+Requirements:\
+\
+Implement a file backup system that allows multiple files to be backed up concurrently.\
+Ensure that file backups are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of files to be backed up.\
+Execute backup functions concurrently.\
+Verify that files are backed up correctly."
 class FileBackupSystem:
     def __init__(self):
         self.backed_up_files = []
@@ -61,7 +62,7 @@ def test_concurrent_file_backup(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 file_backup_system.backup_file(file_path, backup_server)
 """
 

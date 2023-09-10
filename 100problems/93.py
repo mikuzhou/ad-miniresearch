@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 89: Concurrent Database Updates
 #
-# Description: Develop a program to concurrently update data in a database from multiple clients.
-#
-# Requirements:
-#
-# Implement a database update system that allows multiple clients to update data concurrently.
-# Ensure that database updates are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of database update requests from multiple clients.
-# Execute update functions concurrently.
-# Verify that the database is updated correctly.
+problem = "Description: Develop a program to concurrently update data in a database from multiple clients.\
+\
+Requirements:\
+\
+Implement a database update system that allows multiple clients to update data concurrently.\
+Ensure that database updates are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of database update requests from multiple clients.\
+Execute update functions concurrently.\
+Verify that the database is updated correctly."
 class DatabaseUpdater:
     def __init__(self):
         self.updated_data = {}
@@ -62,7 +63,7 @@ def test_concurrent_database_updates(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 database_updater.update_database(client_id, data)
 """
 

@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -9,17 +10,17 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 # Problem 64: Concurrent Email Sending
 #
-# Description: Create a program to concurrently send multiple emails.
-#
-# Requirements:
-#
-# Implement an email sending system that allows multiple emails to be sent concurrently.
-# Ensure that emails are sent successfully and concurrently.
-# Test Set:
-#
-# Provide a list of email recipients and email content.
-# Execute email sending functions concurrently.
-# Verify that all emails are sent successfully.
+problem = "Description: Create a program to concurrently send multiple emails.\
+\
+Requirements:\
+\
+Implement an email sending system that allows multiple emails to be sent concurrently.\
+Ensure that emails are sent successfully and concurrently.\
+Test Set:\
+\
+Provide a list of email recipients and email content.\
+Execute email sending functions concurrently.\
+Verify that all emails are sent successfully."
 
 class EmailSender:
     def __init__(self):
@@ -85,7 +86,7 @@ def test_concurrent_email_sending(solution_code):
 
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 email_sender.send_email(recipient, subject, message)
 """
 

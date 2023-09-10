@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,16 +7,16 @@ from util.threadsanitizer_score import score_python_code
 import time
 # Problem 24: Concurrent Social Media Posts
 #
-# Description: Develop a program for posting social media updates concurrently.
-#
-# Requirements:
-#
-# Implement a social media posting system that allows multiple users to post updates concurrently.
-# Ensure that updates are posted correctly and concurrently.
-# Test Set:
-#
-# Simulate multiple users posting updates concurrently.
-# Verify that the updates are posted correctly.
+problem = "Description: Develop a program for posting social media updates concurrently.\
+\
+Requirements:\
+\
+Implement a social media posting system that allows multiple users to post updates concurrently.\
+Ensure that updates are posted correctly and concurrently.\
+Test Set:\
+\
+Simulate multiple users posting updates concurrently.\
+Verify that the updates are posted correctly."
 class SocialMediaPlatform:
     def __init__(self):
         self.posts = []
@@ -69,7 +70,7 @@ def test_concurrent_social_media_posts(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 social_media.post_update(user, update)
 """
 

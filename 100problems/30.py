@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 28: Concurrent Music Playback
 #
-# Description: Build a program that plays multiple music tracks concurrently.
-#
-# Requirements:
-#
-# Implement a music playback system that allows multiple tracks to be played concurrently.
-# Ensure that music tracks are played correctly and concurrently.
-# Test Set:
-#
-# Provide a list of music tracks.
-# Execute music playback functions concurrently.
-# Verify that all tracks are played correctly.
+problem = "Description: Build a program that plays multiple music tracks concurrently.\
+\
+Requirements:\
+\
+Implement a music playback system that allows multiple tracks to be played concurrently.\
+Ensure that music tracks are played correctly and concurrently.\
+Test Set:\
+\
+Provide a list of music tracks.\
+Execute music playback functions concurrently.\
+Verify that all tracks are played correctly."
 class MusicPlayer:
     def __init__(self):
         self.played_tracks = []
@@ -56,7 +57,7 @@ def test_concurrent_music_playback(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 music_player.play_track(track_name)
 """
 

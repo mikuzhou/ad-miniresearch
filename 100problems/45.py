@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,17 @@ from util.threadsanitizer_score import score_python_code
 from fpdf import FPDF
 # Problem 37: Concurrent PDF Generation
 #
-# Description: Create a program to concurrently generate PDF documents.
-#
-# Requirements:
-#
-# Implement a PDF generation system that allows multiple PDF documents to be generated concurrently.
-# Ensure that PDF generation is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of data for PDF generation.
-# Execute PDF generation functions concurrently.
-# Verify that all PDF documents are generated correctly.
+problem = "Description: Create a program to concurrently generate PDF documents.\
+\
+Requirements:\
+\
+Implement a PDF generation system that allows multiple PDF documents to be generated concurrently.\
+Ensure that PDF generation is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of data for PDF generation.\
+Execute PDF generation functions concurrently.\
+Verify that all PDF documents are generated correctly."
 class PDFGenerator:
     def __init__(self):
         self.generated_pdfs = []
@@ -65,7 +66,7 @@ def test_concurrent_pdf_generation(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 pdf_generator.generate_pdf(data)
 """
 

@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,16 +7,17 @@ from util.threadsanitizer_score import score_python_code
 import random
 # Problem 4: Parallel Sorting Algorithm
 #
-# Description: Create a program that sorts a list of numbers concurrently using a parallel sorting algorithm.
-#
-# Requirements:
-#
-# Implement a parallel sorting algorithm.
-# Ensure that the sorting algorithm is correct and thread-safe.
-# Test Set:
-#
-# Sort a list of random numbers concurrently.
+
 # Automated Testing Python Code (Simplified):
+problem = "Description: Create a program that sorts a list of numbers concurrently using a parallel sorting algorithm.\
+\
+Requirements:\
+\
+Implement a parallel sorting algorithm.\
+Ensure that the sorting algorithm is correct and thread-safe.\
+Test Set:\
+\
+Sort a list of random numbers concurrently."
 class ParallelSorter:
     def __init__(self):
         self.sorted_numbers = None
@@ -56,10 +58,9 @@ def test_parallel_sorting(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 parallel_sorter = ParallelSorter()
 numbers = [random.randint(1, 100) for _ in range(100)]
 parallel_sorter.parallel_sort(numbers)
 """
-
 test_parallel_sorting(solution_code)

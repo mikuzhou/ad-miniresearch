@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -7,17 +8,17 @@ import requests
 
 # Problem 31: Concurrent Website Scraping
 #
-# Description: Design a program that scrapes information from multiple websites concurrently.
-#
-# Requirements:
-#
-# Implement a web scraping system that allows multiple websites to be scraped concurrently.
-# Ensure that website data is scraped correctly and concurrently.
-# Test Set:
-#
-# Provide a list of URLs for websites to scrape.
-# Execute web scraping functions concurrently.
-# Verify that the data from all websites is scraped correctly.
+problem = "Description: Design a program that scrapes information from multiple websites concurrently.\
+\
+Requirements:\
+\
+Implement a web scraping system that allows multiple websites to be scraped concurrently.\
+Ensure that website data is scraped correctly and concurrently.\
+Test Set:\
+\
+Provide a list of URLs for websites to scrape.\
+Execute web scraping functions concurrently.\
+Verify that the data from all websites is scraped correctly."
 class WebsiteScraper:
     def __init__(self):
         self.scraped_data = {}

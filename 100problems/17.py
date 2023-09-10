@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,18 @@ from util.threadsanitizer_score import score_python_code
 import requests
 # Problem 17: Concurrent Image Uploads
 #
-# Description: Create a program that uploads images concurrently to a server.
-#
-# Requirements:
-#
-# Implement an image upload system that allows multiple images to be uploaded concurrently to a server.
-# Ensure that images are uploaded correctly and concurrently.
-# Test Set:
-#
-# Provide a set of image files for upload.
-# Execute image upload functions concurrently to a server.
-# Verify that all images are uploaded correctly.
+problem = "Description: Create a program that uploads images concurrently to a server.\
+\
+Requirements:\
+\
+Implement an image upload system that allows multiple images to be uploaded concurrently to a server.\
+Ensure that images are uploaded correctly and concurrently.\
+Test Set:    image_files = [\"image1.jpg\", \"image2.jpg\", \"image3.jpg\"]\
+    server_url = \"http://example.com/upload\"\
+\
+Provide a set of image files for upload.\
+Execute image upload functions concurrently to a server.\
+Verify that all images are uploaded correctly."
 class ImageUploader:
     def __init__(self, server_url):
         self.server_url = server_url
@@ -63,7 +65,7 @@ def test_concurrent_image_uploads(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 if image_uploader.upload_image(image_file):
     # Process the uploaded image as needed
     pass

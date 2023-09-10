@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 29: Concurrent Video Rendering
 #
-# Description: Design a program to render multiple videos concurrently.
-#
-# Requirements:
-#
-# Implement a video rendering system that allows multiple videos to be rendered concurrently.
-# Ensure that video rendering is performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of video rendering tasks.
-# Execute video rendering functions concurrently.
-# Verify that all videos are rendered correctly.
+problem = "Description: Design a program to render multiple videos concurrently.\
+\
+Requirements:\
+\
+Implement a video rendering system that allows multiple videos to be rendered concurrently.\
+Ensure that video rendering is performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of video rendering tasks.\
+Execute video rendering functions concurrently.\
+Verify that all videos are rendered correctly."
 class VideoRenderer:
     def __init__(self):
         self.rendered_videos = []
@@ -56,7 +57,7 @@ def test_concurrent_video_rendering(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 video_renderer.render_video(video_name)
 """
 

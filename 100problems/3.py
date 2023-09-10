@@ -1,20 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 from PIL import Image
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
-# Description: Develop a program that processes multiple images concurrently.
-#
-# Requirements:
-#
-# Implement a function to process images concurrently.
-# Allow multiple threads to process images concurrently.
-# Ensure accurate image processing and thread-safety.
-# Test Set:
-#
-# Load and process multiple image files and return the total number of pixels processed.
+
 # Automated Testing Python Code (Simplified):
+problem = "Description: Develop a program that processes multiple images concurrently.\
+\
+Requirements:\
+\
+Implement a function to process images concurrently.\
+Allow multiple threads to process images concurrently.\
+Ensure accurate image processing and thread-safety.\
+Test Set:[\"image1.jpg", "image2.jpg", "image3.jpg\"]\
+\
+Load and process multiple image files and return the total number of pixels processed."
 class ImageProcessor:
     def __init__(self):
         self.total_pixels = 0
@@ -56,10 +58,9 @@ def test_concurrent_image_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 image_processor = ImageProcessor()
 image_path = "image1.jpg"
 image_processor.process_image(image_path)
 """
-
 test_concurrent_image_processing(solution_code)

@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 91: Concurrent Stock Analysis
 #
-# Description: Develop a program to concurrently analyze stock data from multiple sources and make buying or selling decisions.
-#
-# Requirements:
-#
-# Implement a stock analysis system that allows multiple stock data sources to be analyzed concurrently.
-# Ensure that stock analysis and trading decisions are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of stock data sources and analysis tasks (e.g., analyze trends, make buy/sell decisions).
-# Execute analysis and trading functions concurrently.
-# Verify that trading decisions are correct.
+problem = "Description: Develop a program to concurrently analyze stock data from multiple sources and make buying or selling decisions.\
+\
+Requirements:\
+\
+Implement a stock analysis system that allows multiple stock data sources to be analyzed concurrently.\
+Ensure that stock analysis and trading decisions are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of stock data sources and analysis tasks (e.g., analyze trends, make buy/sell decisions).\
+Execute analysis and trading functions concurrently.\
+Verify that trading decisions are correct."
 class StockAnalyzer:
     def __init__(self):
         self.trading_decisions = {}
@@ -64,7 +65,7 @@ def test_concurrent_stock_analysis(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 stock_analyzer.analyze_stock(stock_data_source, task)
 """
 

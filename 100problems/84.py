@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 79: Concurrent Task Execution
 #
-# Description: Develop a program to concurrently execute a batch of computational tasks.
-#
-# Requirements:
-#
-# Implement a task execution system that allows multiple computational tasks to be executed concurrently.
-# Ensure that tasks are executed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of tasks that need to be executed.
-# Execute tasks concurrently and capture their results.
-# Verify that tasks are executed correctly.
+problem = "Description: Develop a program to concurrently execute a batch of computational tasks.\
+\
+Requirements:\
+\
+Implement a task execution system that allows multiple computational tasks to be executed concurrently.\
+Ensure that tasks are executed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of tasks that need to be executed.\
+Execute tasks concurrently and capture their results.\
+Verify that tasks are executed correctly."
 class TaskExecutor:
     def __init__(self):
         self.task_results = {}
@@ -63,7 +64,7 @@ def test_concurrent_task_execution(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 task_executor.execute_task(task_id, task_function)
 """
 

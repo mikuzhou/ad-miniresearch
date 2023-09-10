@@ -1,4 +1,5 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
@@ -6,17 +7,14 @@ from util.threadsanitizer_score import score_python_code
 import requests
 # Problem 12: Concurrent File Downloads
 #
-# Description: Build a program to download files concurrently from a list of URLs.
-#
-# Requirements:
-#
-# Implement a file download system that allows multiple files to be downloaded concurrently.
-# Ensure that files are downloaded correctly and concurrently, and that download progress is tracked.
-# Test Set:
-#
-# Provide a list of URLs to files for download.
-# Execute download functions concurrently.
-# Verify that all files are downloaded correctly and download progress is tracked.
+problem = "Description: Build a program to download files concurrently from a list of URLs.\
+Requirements:\
+Implement a file download system that allows multiple files to be downloaded concurrently.\
+Ensure that files are downloaded correctly and concurrently, and that download progress is tracked.\
+Test Set: \
+Provide a list of URLs to files for download.\
+Execute download functions concurrently.\
+Verify that all files are downloaded correctly and download progress is tracked."
 class FileDownloader:
     def __init__(self):
         self.downloaded_files = []
@@ -66,7 +64,7 @@ def test_concurrent_file_downloads(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 if file_downloader.download_file(url):
     # Process the downloaded file content as needed
     pass

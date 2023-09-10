@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 22: Concurrent Video Processing
 #
-# Description: Develop a program to process videos concurrently.
-#
-# Requirements:
-#
-# Implement a video processing system that allows multiple videos to be processed concurrently.
-# Ensure that videos are processed correctly and concurrently.
-# Test Set:
-#
-# Provide a set of video files for processing.
-# Execute video processing functions concurrently.
-# Verify that all videos are processed correctly.
+problem = "Description: Develop a program to process videos concurrently.\
+\
+Requirements:\
+\
+Implement a video processing system that allows multiple videos to be processed concurrently.\
+Ensure that videos are processed correctly and concurrently.\
+Test Set:\
+\
+Provide a set of video files for processing.\
+Execute video processing functions concurrently.\
+Verify that all videos are processed correctly."
 
 class VideoProcessor:
     def __init__(self):
@@ -57,7 +58,7 @@ def test_concurrent_video_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 video_processor.process_video(video_path)
 """
 

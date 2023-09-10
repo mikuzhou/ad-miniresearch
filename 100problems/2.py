@@ -1,21 +1,23 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 2: Concurrent File Processing
 #
-# Description: Build a program that processes multiple text files concurrently.
-#
-# Requirements:
-#
-# Implement a function to process text files concurrently.
-# Allow multiple threads to process files concurrently.
-# Ensure accurate file processing and thread-safety.
-# Test Set:
-#
-# Read and process the content of multiple text files and return their combined length.
+
 # Automated Testing Python Code (Simplified):
+problem = "Description: Build a program that processes multiple text files concurrently.\
+\
+Requirements:\
+\
+Implement a function to process text files concurrently.\
+Allow multiple threads to process files concurrently.\
+Ensure accurate file processing and thread-safety.\
+Test Set:[\"file1.txt", "file2.txt", "file3.txt\"]\
+\
+Read and process the content of multiple text files and return their combined length."
 class FileProcessor:
     def __init__(self):
         self.total_length = 0
@@ -57,10 +59,9 @@ def test_concurrent_file_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 file_processor = FileProcessor()
 file_path = "file1.txt"
 file_processor.process_file(file_path)
 """
-
 test_concurrent_file_processing(solution_code)

@@ -1,21 +1,22 @@
 import threading
+from util.code_generate import pythonCodeGenerator
 import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
 # Problem 92: Concurrent IoT Device Control
 #
-# Description: Build a program to concurrently control IoT devices and collect data from them.
-#
-# Requirements:
-#
-# Implement an IoT device control system that allows multiple IoT devices to be controlled and monitored concurrently.
-# Ensure that IoT device control and data collection are performed correctly and concurrently.
-# Test Set:
-#
-# Provide a list of IoT devices and control tasks (e.g., turn on/off, collect sensor data).
-# Execute control and data collection functions concurrently.
-# Verify that IoT devices are controlled correctly and data is collected accurately.
+problem = "Description: Build a program to concurrently control IoT devices and collect data from them.\
+\
+Requirements:\
+\
+Implement an IoT device control system that allows multiple IoT devices to be controlled and monitored concurrently.\
+Ensure that IoT device control and data collection are performed correctly and concurrently.\
+Test Set:\
+\
+Provide a list of IoT devices and control tasks (e.g., turn on/off, collect sensor data).\
+Execute control and data collection functions concurrently.\
+Verify that IoT devices are controlled correctly and data is collected accurately."
 class IoTDeviceController:
     def __init__(self):
         self.controlled_devices = {}
@@ -64,7 +65,7 @@ def test_concurrent_iot_device_control(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = """
+solution_code = pythonCodeGenerator(problem); """
 iot_device_controller.control_device(device_id, task)
 """
 
