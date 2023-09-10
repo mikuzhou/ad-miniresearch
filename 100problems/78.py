@@ -59,7 +59,7 @@ def test_concurrent_weather_data_retrieval(solution_code):
         # assert city in weather_retriever.weather_data, f"Weather data not retrieved for: {city}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -74,7 +74,7 @@ def test_concurrent_weather_data_retrieval(solution_code):
 
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 weather_retriever.retrieve_weather_data(city, data_source)
 """
 

@@ -61,7 +61,7 @@ def test_concurrent_web_scraping(solution_code):
     # assert all(data in web_scraper.scraped_data for data in expected_data), "Incorrect scraped data"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -75,7 +75,7 @@ def test_concurrent_web_scraping(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 if web_scraper.scrape_website(url):
     # Process the scraped data as needed
     pass

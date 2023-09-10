@@ -43,7 +43,7 @@ def test_concurrent_image_recognition(solution_code):
     # assert all(image_path in image_recognizer.recognized_objects for image_path in image_paths), "Incorrect object recognition"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -57,7 +57,7 @@ def test_concurrent_image_recognition(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 image_recognizer.recognize_objects(image_path)
 """
 

@@ -48,7 +48,7 @@ def test_concurrent_website_scraping(solution_code):
         # assert url in website_scraper.scraped_data, f"Data not scraped for {url}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
 

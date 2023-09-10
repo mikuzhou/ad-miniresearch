@@ -52,7 +52,7 @@ def test_concurrent_database_updates(solution_code):
     # assert values == expected_values, "Incorrect database updates"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -66,7 +66,7 @@ def test_concurrent_database_updates(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 database_updater.update_database(thread_id)
 """
 

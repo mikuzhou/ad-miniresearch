@@ -45,7 +45,7 @@ def test_concurrent_task_scheduler(solution_code):
     # assert all(task_name in task_scheduler.completed_tasks for task_name, _ in tasks), "Incorrect task execution"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -59,7 +59,7 @@ def test_concurrent_task_scheduler(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 task_scheduler.execute_task(task_name, execution_time)
 """
 

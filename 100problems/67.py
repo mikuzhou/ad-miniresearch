@@ -50,7 +50,7 @@ def test_concurrent_video_editing(solution_code):
         # assert edited_video in video_editor.edited_videos, f"Incorrect video editing: {edited_video}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -64,7 +64,7 @@ def test_concurrent_video_editing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 video_editor.edit_video(video_file, edit_task)
 """
 

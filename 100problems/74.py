@@ -53,7 +53,7 @@ def test_concurrent_payment_processing(solution_code):
         # assert (customer_name, amount) in payment_processor.processed_payments, f"Incorrect payment processing: {customer_name}, ${amount}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -67,7 +67,7 @@ def test_concurrent_payment_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 payment_processor.process_payment(customer_name, amount)
 """
 

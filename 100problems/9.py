@@ -48,7 +48,7 @@ def test_concurrent_image_filters(solution_code):
     # assert all(image.size == expected_size for image, expected_size in zip(image_filter_applicator.filtered_images, expected_image_sizes)), "Incorrect image filtering"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results

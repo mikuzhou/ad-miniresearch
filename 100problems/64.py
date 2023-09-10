@@ -53,7 +53,7 @@ def test_concurrent_social_media_posting(solution_code):
         # assert (post, platform) in social_media_poster.published_posts, f"Incorrect social media posting: {post} on {platform}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -67,7 +67,7 @@ def test_concurrent_social_media_posting(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 social_media_poster.post_to_social_media(post, platform)
 """
 

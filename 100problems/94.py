@@ -50,7 +50,7 @@ def test_concurrent_email_sending(solution_code):
         # assert email_sender.sent_emails[recipient] == f"Sent to {recipient} via {email_server}: {message}", f"Incorrect email sent to {recipient}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -64,7 +64,7 @@ def test_concurrent_email_sending(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 email_sender.send_email(recipient, message, email_server)
 """
 

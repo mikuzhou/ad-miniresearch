@@ -48,7 +48,7 @@ def test_concurrent_web_scraping(solution_code):
     # assert web_scraper.total_words == expected_total_words, "Incorrect total words"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -62,7 +62,7 @@ def test_concurrent_web_scraping(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 web_scraper = WebScraper()
 url = "http://website1.com"
 web_scraper.scrape_web_page(url)

@@ -49,7 +49,7 @@ def test_concurrent_video_streaming(solution_code):
         # assert video_data in video_streamer.client_streams[client_id], f"Incorrect video streaming: {client_id}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results

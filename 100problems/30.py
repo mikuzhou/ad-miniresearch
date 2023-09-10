@@ -43,7 +43,7 @@ def test_concurrent_music_playback(solution_code):
     # assert all(track_name in music_player.played_tracks for track_name in music_tracks), "Incorrect music playback"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -57,7 +57,7 @@ def test_concurrent_music_playback(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 music_player.play_track(track_name)
 """
 

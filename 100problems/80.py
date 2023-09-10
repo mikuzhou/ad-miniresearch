@@ -57,7 +57,7 @@ def test_concurrent_database_queries(solution_code):
         # assert client_id in query_handler.query_results, f"Query result not found for {client_id}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -72,7 +72,7 @@ def test_concurrent_database_queries(solution_code):
 
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 query_handler.execute_query(client_id, query)
 """
 

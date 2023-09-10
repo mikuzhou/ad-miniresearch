@@ -43,7 +43,7 @@ def test_concurrent_file_processing(solution_code):
     # assert all(file_path in file_processor.processed_files for file_path in file_paths), "Incorrect file processing"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -57,7 +57,7 @@ def test_concurrent_file_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 file_processor.process_file(file_path)
 """
 

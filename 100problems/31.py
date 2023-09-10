@@ -43,7 +43,7 @@ def test_concurrent_video_rendering(solution_code):
     # assert all(video_name in video_renderer.rendered_videos for video_name in video_tasks), "Incorrect video rendering"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -57,7 +57,7 @@ def test_concurrent_video_rendering(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 video_renderer.render_video(video_name)
 """
 

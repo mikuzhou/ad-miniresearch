@@ -44,7 +44,7 @@ def test_parallel_sorting(solution_code):
     # assert parallel_sorter.sorted_numbers == expected_sorted_numbers, "Incorrect sorting"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -58,7 +58,7 @@ def test_parallel_sorting(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 parallel_sorter = ParallelSorter()
 numbers = [random.randint(1, 100) for _ in range(100)]
 parallel_sorter.parallel_sort(numbers)

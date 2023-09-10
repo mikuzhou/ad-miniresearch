@@ -51,7 +51,7 @@ def test_concurrent_image_compression(solution_code):
         # assert compressed_image_path in image_compressor.compressed_images, f"Incorrect image compression: {compressed_image_path}"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -65,7 +65,7 @@ def test_concurrent_image_compression(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 image_compressor.compress_image(image_path, output_path)
 """
 

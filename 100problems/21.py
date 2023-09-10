@@ -45,7 +45,7 @@ def test_concurrent_sensor_data_processing(solution_code):
     # assert all(result in sensor_data_processor.processed_data for result in expected_processed_data), "Incorrect sensor data processing"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -59,7 +59,7 @@ def test_concurrent_sensor_data_processing(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 sensor_data_processor.process_sensor_data(sensor_id, data)
 """
 

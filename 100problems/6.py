@@ -67,7 +67,7 @@ def test_concurrent_database_access(solution_code):
     # assert abs(expected_average - 0.5) < 0.01, "Incorrect average"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -81,7 +81,7 @@ def test_concurrent_database_access(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 value = random.random()
 database_manager.insert_data(value)
 """

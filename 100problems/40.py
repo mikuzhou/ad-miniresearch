@@ -47,7 +47,7 @@ def test_concurrent_stock_trading(solution_code):
     # assert all(operation in stock_trader.trades for operation in trading_operations), "Incorrect stock trading"
 
     # Run Pylint and ThreadSanitizer
-    pylint_output = subprocess.getoutput(f"pylint {solution_code}");print(pylint_output)
+    pylint_output = subprocess.getoutput(f"pylint {solution_code}")
     threadsanitizer_output = subprocess.getoutput(f"ThreadSanitizer {solution_code}")
 
     # Calculate a score based on pylint and threadsanitizer results
@@ -61,7 +61,7 @@ def test_concurrent_stock_trading(solution_code):
     print(f"Final Score: {final_score}")
 
 # Example solution code
-solution_code = pythonCodeGenerator(problem); print(solution_code);"""
+solution_code = pythonCodeGenerator(problem); """
 stock_trader.trade_stock(user, action, stock_symbol, price)
 """
 
