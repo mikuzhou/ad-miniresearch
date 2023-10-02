@@ -40,6 +40,6 @@ total_score, num_files = execute_python_files_in_folder_and_get_scores(folder_pa
 print(f"Total Score: {total_score}/{num_files*100}")
 
 # Save the total score to 'output.json'
-output = {"output": f"{total_score/num_files}"}
+output = {"output": total_score/num_files}
 with open("output.json", "w") as json_file:
     json.dump(output, json_file)
