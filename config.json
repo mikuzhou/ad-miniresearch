@@ -1,1 +1,1 @@
-{"name": "Example Model Name", "model": "Example Model Type", "run_test": "python main.py --test", "run_score": "python main.py --score"}
+{"name": "Example Model Name", "model": "Example Model Type", "tags":["threadsafety"], "run_test": "python main.py --test", "run_score": "python main.py --score"}
