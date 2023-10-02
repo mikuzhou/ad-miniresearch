@@ -60,7 +60,7 @@ def test_concurrent_email_sending(solution_code):
     threadsanitizer_score = score_python_code(threadsanitizer_output)  # Implement your scoring logic
 
     # Calculate the final score
-    final_score = (pylint_score*3 + float(threadsanitizer_score)*7) / 10
+    final_score = (pylint_score*3 + float(threadsanitizer_score)*7)  
 
     # Output the final score
     print(f"Final Score: {final_score}")

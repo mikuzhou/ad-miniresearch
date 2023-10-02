@@ -4,7 +4,7 @@ import concurrent.futures
 import subprocess
 from util.pylint_score import extract_pylint_score
 from util.threadsanitizer_score import score_python_code
-# Problem 21: Concurrent Sensor Data Processing
+# Problem 1: Concurrent Sensor Data Processing
 #
 problem = "Description: Develop a program to process sensor data concurrently from multiple sensors.\
 \
@@ -53,7 +53,7 @@ def test_concurrent_sensor_data_processing(solution_code):
     threadsanitizer_score = score_python_code(threadsanitizer_output)  # Implement your scoring logic
 
     # Calculate the final score
-    final_score = (pylint_score*3 + float(threadsanitizer_score)*7) / 10
+    final_score = (pylint_score*3 + float(threadsanitizer_score)*7)  
 
     # Output the final score
     print(f"Final Score: {final_score}")

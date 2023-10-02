@@ -44,7 +44,7 @@ def test_concurrent_database_updates(solution_code):
             executor.submit(execute_solution, client_id, data)
 
     # Verify the correctness of database updates
-    for client_id, data in update_requests:
+    # for client_id, data in update_requests:
         # assert client_id in database_updater.updated_data, f"Data not updated for {client_id}"
         # assert database_updater.updated_data[client_id] == data, f"Incorrect data update for {client_id}"
 
@@ -57,7 +57,7 @@ def test_concurrent_database_updates(solution_code):
     threadsanitizer_score = score_python_code(threadsanitizer_output)  # Implement your scoring logic
 
     # Calculate the final score
-    final_score = (pylint_score*3 + float(threadsanitizer_score)*7) / 10
+    final_score = (pylint_score*3 + float(threadsanitizer_score)*7)  
 
     # Output the final score
     print(f"Final Score: {final_score}")

@@ -60,7 +60,7 @@ def test_concurrent_sensor_readings(solution_code):
     threadsanitizer_score = score_python_code(threadsanitizer_output)  # Implement your scoring logic
 
     # Calculate the final score
-    final_score = (pylint_score*3 + float(threadsanitizer_score)*7) / 10
+    final_score = (pylint_score*3 + float(threadsanitizer_score)*7)  
 
     # Output the final score
     print(f"Final Score: {final_score}")
@@ -69,5 +69,4 @@ def test_concurrent_sensor_readings(solution_code):
 solution_code = pythonCodeGenerator(problem); """
 sensor_reader.read_sensor(sensor_id, reading)
 """
-
 test_concurrent_sensor_readings(solution_code)

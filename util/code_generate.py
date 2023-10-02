@@ -20,7 +20,7 @@ def pythonCodeGenerator(problem_description):
     chat = ChatOpenAI(
         model="gpt-3.5-turbo-16k",
         temperature=0,
-        openai_api_key = ""
+        openai_api_key = "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"
         # put your api here
     )
     system_template = """You are an AI assistant tasked with generating a solution code in Python based on the given problem description."""

@@ -4,7 +4,7 @@ import subprocess
 import json
 
 def execute_python_files_in_folder_and_get_scores(folder_path):
-    total_score = 0  # Variable to hold the total score
+    total_score = 0.0  # Variable to hold the total score
     num_files = 0    # Variable to count the number of executed Python files
     
     # Iterate over all files in the specified folder
@@ -22,12 +22,13 @@ def execute_python_files_in_folder_and_get_scores(folder_path):
                     
                     # Assume that the score is printed as the last line of the output
                     score_line = output.split("\n")[-1]
-                    score = int(score_line.split()[-1])  # Assume the score is the last word in the last line
+                    score = float(score_line.split()[-1])  # Assume the score is the last word in the last line
                     total_score += score  # Add the score to the total score
                     
                     print(f"Score from {file}: {score}")
                 except Exception as e:
                     print(f"An error occurred while executing {file_path}: {e}")
+
     
     return total_score, num_files
 
