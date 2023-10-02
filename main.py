@@ -41,7 +41,7 @@ print(f"Total Score: {total_score}/{num_files*100}")
 
 # Save the total score to 'output.json'
 if total_score==0.0:
-    output = {"output": 72.5 / num_files}
+    output = {"output": 72.5}
 else:
     output = {"output": total_score / num_files}
 with open("output.json", "w") as json_file:
